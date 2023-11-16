@@ -84,9 +84,10 @@ def main():
             else:
                 df_filtered = df.loc[(df["MACROPROBLEMA"] == macroProblemaEscolhido)]
             
-            # st.write(df_filtered)
+            
             bar = px.bar(df_filtered, x='CIDADE', y ='AVALIAÇÃO', color='MACROPROBLEMA')
-            bar.update_traces(hoverlabel_align='left', selector=dict(type='bar'))
+            bar.update_traces(showlegend=False, hoverlabel_align='left', selector=dict(type='bar'))
+            bar.update_layout(xaxis={'categoryorder':'total descending'})
             st.plotly_chart(bar, use_container_width=True)
 
 
