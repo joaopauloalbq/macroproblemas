@@ -22,8 +22,15 @@ def getCities(sheet, linha, coluna):
     return cidades
 
 def main():
-    st.header("Painel de Acompanhamento, Monitoramento e Avaliação dos Indicadores da Saúde do Estado")
-    st.subheader("Diretoria de Unidade de Planejamento (DUP)")
+    st.set_page_config(page_title="Painel de Acompanhamento, Monitoramento e Avaliação dos Indicadores da Saúde do Estado", layout='wide')
+    
+    col1, col2 = st.columns([0.8, 0.2])
+    with col1:
+        st.header("Painel de Acompanhamento, Monitoramento e Avaliação dos Indicadores da Saúde do Estado")
+        st.subheader("Diretoria de Unidade de Planejamento (DUP)")
+    with col2:
+        st.image("https://admin.pi.gov.br/uploads/logowhite_8aeaf326c5.svg")
+
     st.divider()
     planilha = st.file_uploader('Selecione a planilha', type='xlsx')
     st.divider()
